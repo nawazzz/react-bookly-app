@@ -5,14 +5,18 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      inputValue: ""
     }
   }
 
   render() {
     return (
-      <div>
+      <div className='mainAppContainer'>
         <h1>React-Bookly-App</h1>
+        <div className='inputParent'>
+          <input type={"text"} value={this.state.value} placeholder="Enter any book name"/>
+          <button>Add</button>
+        </div>
       </div>
     );
   }
