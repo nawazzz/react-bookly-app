@@ -43,14 +43,16 @@ table {
 }
 // ....................................................................
 
-body{
-	background-color: #f8f5f5;
-	.mainAppContainer{
-		text-align: center;
-		h1{
-			color: #e2dbdb;
-    		font-size: 60px;
-    		font-weight: 500;
-		}
-	}
+button{
+    border: none;
+    background-color: #e2dbdb;
+    cursor: pointer;
+    padding: 10px;
+    width: 25%;
+    &:hover{
+        background-color: #e5b1b1;
+    }
+    &:active{
+        background:#f8f5f5;
+    }
 }

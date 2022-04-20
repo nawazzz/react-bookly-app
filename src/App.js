@@ -1,22 +1,55 @@
 import React from 'react'
 import './App.scss';
+import InputComponent from './InputComponent'
+import HeaderComponent from './HeaderComponent';
+import ButtonComponent from './ButtonComponent'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      inputValue: ""
+      inputValue: "",
+      allBooks: []
+    }
+  }
+
+  updateInputValue = (event) => {
+    this.setState({
+      inputValue: event.target.value
+    })
+  }
+
+  // appendBookInList = (event) => {
+  //   if (this.state.inputValue) {
+  //     let obj = {
+  //       bookName: this.state.inputValue,
+  //       id: new Date().getTime()
+  //     }
+  //     this.setState({
+  //       allBooks: [...this.state.allBooks, obj],
+  //       inputValue: ""
+  //     })
+  //   }
+  // }
+
+  appendBookByKeypress = (event) => {
+    
+    if (event.key === "Enter") {
+      this.appendBookInList()
     }
   }
 
   render() {
     return (
       <div className='mainAppContainer'>
-        <h1>React-Bookly-App</h1>
-        <div className='inputParent'>
-          <input type={"text"} value={this.state.value} placeholder="Enter any book name"/>
-          <button>Add</button>
-        </div>
+        <HeaderComponent />
+
+        <InputComponent inputValue={this.state.inputValue}
+          allBooks={this.state.allBooks}
+          updateInputValue={this.updateInputValue}
+          appendBookByKeypress={this.appendBookByKeypress}
+          appendBookInList={this.appendBookInList}
+        />
       </div>
     );
   }
