@@ -19,18 +19,19 @@ class App extends React.Component {
     })
   }
 
-  // appendBookInList = (event) => {
-  //   if (this.state.inputValue) {
-  //     let obj = {
-  //       bookName: this.state.inputValue,
-  //       id: new Date().getTime()
-  //     }
-  //     this.setState({
-  //       allBooks: [...this.state.allBooks, obj],
-  //       inputValue: ""
-  //     })
-  //   }
-  // }
+  appendBookInList = (event) => {
+    console.log(event)
+    if (this.state.inputValue) {
+      let obj = {
+        bookName: this.state.inputValue,
+        id: new Date().getTime()
+      }
+      this.setState({
+        allBooks: [...this.state.allBooks, obj],
+        inputValue: ""
+      })
+    }
+  }
 
   appendBookByKeypress = (event) => {
     
@@ -48,8 +49,12 @@ class App extends React.Component {
           allBooks={this.state.allBooks}
           updateInputValue={this.updateInputValue}
           appendBookByKeypress={this.appendBookByKeypress}
-          appendBookInList={this.appendBookInList}
         />
+        {/* <ButtonComponent
+          inputValue={this.state.inputValue}
+          allBooks={this.state.allBooks}
+          appendBookInList={this.appendBookInList}
+        /> */}
       </div>
     );
   }

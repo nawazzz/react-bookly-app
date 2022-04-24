@@ -3,18 +3,18 @@ import './InputComponent.scss'
 import ButtonComponent from './ButtonComponent'
 
 class InputComponent extends React.Component {
-    appendBookInList = (event) => {
-        if (this.props.inputValue) {
-          let obj = {
-            bookName: this.props.inputValue,
-            id: new Date().getTime()
-          }
-          this.setState({
-            allBooks: [...this.props.allBooks, obj],
-            inputValue: ""
-          })
-        }
-      }
+    // appendBookInList = (event) => {
+    //     if (this.props.inputValue) {
+    //       let obj = {
+    //         bookName: this.props.inputValue,
+    //         id: new Date().getTime()
+    //       }
+    //       this.setState({
+    //         allBooks: [...this.props.allBooks, obj],
+    //         inputValue: ""
+    //       })
+    //     }
+    //   }
     render() {
         return(
             <div className='inputParent'>
@@ -28,9 +28,6 @@ class InputComponent extends React.Component {
                     allBooks={this.props.allBooks}
                     appendBookInList={this.appendBookInList}
                 />
-                {/* <button
-                    onClick={(event) => this.props.appendBookInList(event)}
-                >Add</button> */}
             </div>
         )
     }

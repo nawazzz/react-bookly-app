@@ -6,8 +6,7 @@ class ButtonComponent extends React.Component {
         return(
             <div className="buttonContainer">
                 <button
-
-                    onClick={(event) => this.props.appendBookInList(event)}
+                    onClick={(event) => this.props.appendBookInList()}
                 >Add</button>
             </div>
         )
