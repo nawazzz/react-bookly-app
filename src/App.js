@@ -3,6 +3,7 @@ import './App.scss';
 import InputComponent from './InputComponent'
 import HeaderComponent from './HeaderComponent';
 import ButtonComponent from './ButtonComponent'
+import List from './List';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class App extends React.Component {
           allBooks={this.state.allBooks}
           appendBookInList={this.appendBookInList}
         /> */}
+        <List inputValue={this.state.inputValue}
+          allBooks={this.state.allBooks}
+        />
       </div>
     );
   }
