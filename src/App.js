@@ -112,6 +112,7 @@ class App extends React.Component {
           editList={this.editList}
           deleteList={this.deleteList}
           markAsRead={this.markAsRead}
+          fileterdBooks={this.state.fileterdBooks}
         />
         <FilterPanel
           inputValue={this.state.inputValue}
