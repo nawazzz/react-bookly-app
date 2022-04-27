@@ -40,12 +40,27 @@ class App extends React.Component {
     }
   }
 
-  editList = (elm) => {
-    console.log(elm)
+  deleteList = (elm) => {
+    const booksAfterDeletion = this.state.allBooks.filter((item, index) => {
+      if (elm.id !== item.id) {
+        return true
+      }
+    })
+    this.setState({
+      allBooks: booksAfterDeletion
+    })
   }
 
-  deleteList = (event) => {
-    console.log(event)
+  editList = (elm) => {
+    const booksAfterDeletion = this.state.allBooks.filter((item, index) => {
+      if (elm.id !== item.id) {
+        return true
+      }
+    })
+    this.setState({
+      allBooks: booksAfterDeletion,
+      inputValue: elm.bookName
+    }) 
   }
 
   render() {

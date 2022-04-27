@@ -6,26 +6,36 @@ import deleteIcon from './trash.svg';
 class List extends React.Component {
 
     render() {
+        
         return(
             <div>
                 {this.props.allBooks.map((elm, index) => {
                     return(
                         <div className='listMainContainer'>
-                            <div className='bookTitleContainer'>
-                                <input type={"checkbox"}/>
-                                <h6>{elm.bookName}</h6>
+                            <ul className='bookTitleContainer'>
+                                <span>
+                                    <input type={"checkbox"}/>
+                                </span>
+                                <li>{elm.bookName}</li>
+                                    {/* <span onClick={() => {this.props.editList(elm)}}>Edit</span>
+                                    <span onClick={(elm) => {this.props.deleteList(elm)}}>x</span> */}
+                                
+                                
                                 {/* <span style={{width: "10px"}} onClick={(event) => {this.props.editList(event)}} ><img style={{width: "100%"}} src={editIcon} alt="edit list"/></span> */}
-                            </div>
+                            </ul>
                             <div className='iconsContainer'>
-                                <span onClick={(elm) => {this.props.editList(elm)}} ><img src={editIcon} alt="edit list"/></span>
-                                <span onClick={(event) => {this.props.deleteList(event)}}><img src={deleteIcon} alt="delete list"/></span>
-                            </div>                            
+                                <span onClick={() => this.props.editList(elm)} ><img src={editIcon} alt="edit list"/></span>
+                                <span onClick={() => this.props.deleteList(elm)}><img src={deleteIcon} alt="delete list"/></span>
+                            </div>  
+                                                      
                         </div>
                     )
+                    
                 })
                 }
             </div>
         )
+        
     }
 }
 export default List;
