@@ -21,7 +21,6 @@ class App extends React.Component {
   }
 
   appendBookInList = (event) => {
-    console.log(event)
     if (this.state.inputValue) {
       let obj = {
         bookName: this.state.inputValue,
@@ -41,11 +40,18 @@ class App extends React.Component {
     }
   }
 
+  editList = (elm) => {
+    console.log(elm)
+  }
+
+  deleteList = (event) => {
+    console.log(event)
+  }
+
   render() {
     return (
       <div className='mainAppContainer'>
         <HeaderComponent />
-
         <InputComponent inputValue={this.state.inputValue}
           allBooks={this.state.allBooks}
           updateInputValue={this.updateInputValue}
@@ -58,6 +64,8 @@ class App extends React.Component {
         /> */}
         <List inputValue={this.state.inputValue}
           allBooks={this.state.allBooks}
+          editList={this.editList}
+          deleteList={this.deleteList}
         />
       </div>
     );
