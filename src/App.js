@@ -4,13 +4,15 @@ import InputComponent from './InputComponent'
 import HeaderComponent from './HeaderComponent';
 import ButtonComponent from './ButtonComponent'
 import List from './List';
+import FilterPanel from './FilterPanel';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       inputValue: "",
-      allBooks: []
+      allBooks: [],
+      fileterdBooks: []
     }
   }
 
@@ -24,7 +26,8 @@ class App extends React.Component {
     if (this.state.inputValue) {
       let obj = {
         bookName: this.state.inputValue,
-        id: new Date().getTime()
+        id: new Date().getTime(),
+        isRead: false
       }
       this.setState({
         allBooks: [...this.state.allBooks, obj],
@@ -63,6 +66,33 @@ class App extends React.Component {
     }) 
   }
 
+  markAsRead = (elm) => {
+    const readBooks = this.state.allBooks.map((item, index) => {
+      if (elm.id === item.id) {
+        return {
+          ...item,
+          isRead: !item.isRead
+        }
+      }
+      return item
+    })
+    this.setState({
+      allBooks: readBooks
+    })
+  }
+
+  filterBooks = (event) => {
+    
+    const fileterdArray = this.state.allBooks.filter((elm, index) => {
+      if ((event.target.innerText === "Reading") && (elm.isRead === false)) {
+        return true
+      }
+    })
+    this.setState({
+      fileterdBooks: fileterdArray
+    })
+  }
+
   render() {
     return (
       <div className='mainAppContainer'>
@@ -81,6 +111,12 @@ class App extends React.Component {
           allBooks={this.state.allBooks}
           editList={this.editList}
           deleteList={this.deleteList}
+          markAsRead={this.markAsRead}
+        />
+        <FilterPanel
+          inputValue={this.state.inputValue}
+          allBooks={this.state.allBooks}
+          filterBooks={this.filterBooks}
         />
       </div>
     );

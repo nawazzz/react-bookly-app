@@ -41,29 +41,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-// .....................................................................
+// ...........................................................................
 
-.inputParent{
+.panelContainer{
     display: flex;
-    background-color: #fff;
-    height: 50px;
-    margin: 0 auto;
+    justify-content: space-between;
     width: 50%;
-	box-shadow: 0 12px 20px #af9f9f;
-    input{
-        border: none;
-        font-size: 15px;
-        height: 96%;
-        outline: none;
-        padding-left: 15px;
-        width: 90%;
+    margin: 0 auto;
+    .allFilterContainer{
+        width: 38%;
+        display: flex;
+        justify-content: space-between;
+        .ReadBooksCount{
+            cursor: pointer;
+        }
+        button{
+            cursor: pointer;
+        }
     }
-	// .clearInputValue{
-	// 	padding: 16px 0 0 10px;
-	// 	cursor: pointer;
-	// 	display: none;
-	// }
-	// &:hover .clearInputValue{
-	// 	display: block;
-	// }
 }

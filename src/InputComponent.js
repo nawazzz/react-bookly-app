@@ -23,6 +23,7 @@ class InputComponent extends React.Component {
                     onKeyPress={(event) => this.props.appendBookByKeypress(event)}
                     placeholder="Enter any book name"
                 />
+                {/* <span className="clearInputValue">x</span> */}
                 <ButtonComponent
                     inputValue={this.props.inputValue}
                     allBooks={this.props.allBooks}

@@ -13,10 +13,14 @@ class List extends React.Component {
                     return(
                         <div className='listMainContainer'>
                             <ul className='bookTitleContainer'>
-                                <span>
+                                <span onClick={() => this.props.markAsRead(elm)} >
                                     <input type={"checkbox"}/>
                                 </span>
-                                <li>{elm.bookName}</li>
+                                <li
+                                    style={{textDecoration: elm.isRead? "underline": "none"}}
+                                >
+                                    {elm.bookName}
+                                </li>
                                     {/* <span onClick={() => {this.props.editList(elm)}}>Edit</span>
                                     <span onClick={(elm) => {this.props.deleteList(elm)}}>x</span> */}
                                 
