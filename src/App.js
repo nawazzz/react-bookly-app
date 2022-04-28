@@ -91,6 +91,22 @@ class App extends React.Component {
     this.setState({
       fileterdBooks: fileterdArray
     })
+
+    const fileterdArrayRead = this.state.allBooks.filter((elm, index) => {
+      if ((event.target.innerText === "Read") && (elm.isRead === true)) {
+        return true
+      }
+    })
+    this.setState({
+      fileterdBooks: fileterdArrayRead
+    })
+  }
+
+  clearBookList = (event) => {
+    this.setState({
+      allBooks: [],
+      filterBooks: []
+    })
   }
 
   render() {
@@ -118,6 +134,7 @@ class App extends React.Component {
           inputValue={this.state.inputValue}
           allBooks={this.state.allBooks}
           filterBooks={this.filterBooks}
+          clearBookList={this.clearBookList}
         />
       </div>
     );
