@@ -13,10 +13,10 @@ class FilterPanel extends React.Component {
                     onClick={(event) => this.props.filterBooks(event)}
                 >
                     <div className="allFilterContainer">
-                        <p className="readBooksCount">
-                            'Reading': 
+                        <button className="readBooksCount">
+                            'In reading': 
                             {/* {this.props.filteredBooks.length > 0 ? this.props.filteredBooks.length : 0} */}
-                        </p>
+                        </button>
                         <span className="booksFilterSelectionButton">
                             <button>All</button>
                         </span>

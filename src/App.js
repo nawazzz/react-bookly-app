@@ -95,6 +95,8 @@ class App extends React.Component {
         return true
       }
     })
+  
+
     this.setState({
       fileterdBooks: 
       // this.state.fileterdBooks.length>0 ? [...this.state.fileterdBooks, fileterdArray] : 
@@ -103,6 +105,7 @@ class App extends React.Component {
       // this.state.readFilterArray.length>0 ? [...this.state.readFilterArray, getReadBooks] : 
       getReadBooks
     })
+    
   }
 
   clearBookList = (event) => {
