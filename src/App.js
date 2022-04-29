@@ -12,9 +12,11 @@ class App extends React.Component {
     this.state = {
       inputValue: "",
       allBooks: [],
-      fileterdBooks: []
+      filteredBooks: [],
+      readFilterArray: []
     }
   }
+
 
   updateInputValue = (event) => {
     this.setState({
@@ -88,24 +90,26 @@ class App extends React.Component {
         return true
       }
     })
-    this.setState({
-      fileterdBooks: fileterdArray
-    })
-
-    const fileterdArrayRead = this.state.allBooks.filter((elm, index) => {
+    const getReadBooks = this.state.allBooks.filter((elm, index) => {
       if ((event.target.innerText === "Read") && (elm.isRead === true)) {
         return true
       }
     })
     this.setState({
-      fileterdBooks: fileterdArrayRead
+      fileterdBooks: 
+      // this.state.fileterdBooks.length>0 ? [...this.state.fileterdBooks, fileterdArray] : 
+      fileterdArray,
+      readFilterArray: 
+      // this.state.readFilterArray.length>0 ? [...this.state.readFilterArray, getReadBooks] : 
+      getReadBooks
     })
   }
 
   clearBookList = (event) => {
     this.setState({
       allBooks: [],
-      filterBooks: []
+      filteredBooks: [],
+      readFilterArray: []
     })
   }
 
@@ -128,13 +132,15 @@ class App extends React.Component {
           editList={this.editList}
           deleteList={this.deleteList}
           markAsRead={this.markAsRead}
-          fileterdBooks={this.state.fileterdBooks}
+          filteredBooks={this.state.filteredBooks}
+          readFilterArray={this.state.readFilterArray}
         />
         <FilterPanel
           inputValue={this.state.inputValue}
           allBooks={this.state.allBooks}
           filterBooks={this.filterBooks}
           clearBookList={this.clearBookList}
+          fileterdBooks={this.state.fileterdBooks}
         />
       </div>
     );

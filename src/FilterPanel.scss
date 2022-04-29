@@ -49,15 +49,20 @@ table {
     width: 50%;
     margin: 0 auto;
     .allFilterContainer{
-        width: 38%;
+        width: 47%;
         display: flex;
         justify-content: space-between;
-        .ReadBooksCount{
+        .readBooksCount{
             cursor: pointer;
+            background-color: #d9aaaa;
+        }
+        .booksFilterSelectionButton{
+            
+            
         }
         button{
-            cursor: pointer;
-        }
+                cursor: pointer;
+         }
     }
     .clearButtonContainer{
         button{
