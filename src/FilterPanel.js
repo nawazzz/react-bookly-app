@@ -28,7 +28,7 @@ class FilterPanel extends React.Component {
                         </span>
                     </div>
                     <div className="clearButtonContainer">
-                        <button onClick={(event) => this.props.clearBookList(event)}>Clear Read</button>
+                        <button onClick={(event) => this.props.clearBookList(event)}>Clear All</button>
                     </div>
                 </div>
             </div>
